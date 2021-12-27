@@ -1,3 +1,3 @@
 # rsschool-cv
 
-## https://tv-dem.github.io/rsschool-cv/c
+## https://tv-dem.github.io/rsschool-cv/cv
