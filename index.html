@@ -38,6 +38,34 @@
 		</ul>
 	</div>
 </div>
+
+<div class="projects page-container">
+	<h2>projects</h2>
+	<div class="projects__content">
+		<div class="projects__description">
+			<h3>Singolo - Apr 2020</h3>
+			<ul>
+				<p>Technologies:</p>
+				<li data-num="0">HTML</li>
+				<li data-num="1">CSS</li>
+				<li data-num="2">JS</li>
+				<li data-num="3"></li>
+			</ul>
+		</div>
+		<div class="projects__examples">
+			<img src="./tmp/progects/singolo-1.png" alt="">
+			<img src="./tmp/progects/singolo-2.png" alt="">
+			<img id="project-change0" data-project="0" src="./tmp/progects/singolo-3.png" alt="">
+			<img id="project-change1" data-project="1" src="./tmp/progects/song-bird-1.png" alt="">
+			<img src="./tmp/progects/song-bird-2.png" alt="">
+			<img id="project-change2" data-project="2" src="./tmp/progects/snake-1.png" alt="">
+			<img src="./tmp/progects/snake-2.png" alt="">
+			<img src="./tmp/progects/snake-3.png" alt="">
+		</div>
+	</div>
+
+</div>
+
 </body>
 
 <script type="text/javascript" src="https://unpkg.com/onscreen/dist/on-screen.umd.min.js"></script>
@@ -68,6 +96,75 @@
 		os.on('enter', selector, AddMoveTitle)
 		os.on('leave', selector, removeMoveTitle)
 	})
+	
+	const projectTitle = document.querySelector('.projects__description h3');
+	const projectTechnologiesLi = document.querySelectorAll('.projects__description li');
+	
+	const projectData = [
+		{
+			title: 'Singolo - Apr 2020',
+			technologies: [
+				'JS',
+				'CSS',
+				'HTML'
+			]
+		},
+		{
+			title: 'songbird - Aug 2020',
+			technologies: [
+				'ReactJs',
+				'CSS',
+				'HTML'
+			]
+		},
+		{
+			title: 'snake - Mar 2021',
+			technologies: [
+				'ReactJs',
+				'CSS',
+				'HTML'
+			]
+		},
+		{
+			title: 'travel app - Mar 2021',
+			technologies: [
+				'ReactJs',
+				'TS',
+				'CSS',
+				'HTML'
+			]
+		},
+		{
+			title: 'rs lang - Apr 2021',
+			technologies: [
+				'ReactJs',
+				'TS',
+				'CSS',
+				'HTML'
+			]
+		}
+	]
+	
+	const changeProjectData = ({dataset}) => {
+		const {project} = dataset;
+		const transitionEndHandler = ({target}) => {
+			const data = target.dataset.num ? projectData[project].technologies[target.dataset.num] : projectData[project].title;
+			target.textContent = data;
+			target.classList.remove('hide')
+			target.removeEventListener('transitionend', transitionEndHandler)
+		}
+		if(projectTitle.textContent === projectData[project].title){
+			return
+		}
+		projectTitle.addEventListener('transitionend', transitionEndHandler)
+		Array.from(projectTechnologiesLi).forEach(el => el.addEventListener('transitionend', transitionEndHandler))
+		projectTitle.classList.add('hide')
+		projectTechnologiesLi.forEach(el => el.classList.add('hide'))
+	}
+	
+	os.on('enter', '#project-change0', changeProjectData);
+	os.on('enter', '#project-change1', changeProjectData);
+	os.on('enter', '#project-change2', changeProjectData);
 	
 </script>
 
