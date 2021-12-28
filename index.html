@@ -5,9 +5,70 @@
 	<meta name="viewport"
 				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./index.css">
 	<title>Document</title>
 </head>
 <body>
 
+<div class="preview">
+	<div class="preview__box">
+		<h1>Demchuk Tatyana</h1>
+		<p>frontent developer</p>
+	</div>
+</div>
+<div class="about page-container">
+	<h2>about me</h2>
+	<div class="about__box">
+		<div class="about__description">
+			<p>Hi! I`m motivated frontend developer, having half of year experience of working in this area</p>
+		</div>
+	<img src="tmp/cv.jpg" alt="">
+	</div>
+</div>
+<div class="skills page-container">
+	<h2>skills</h2>
+	<div class="skills__box">
+		<ul>
+			<li>Figma</li>
+			<li>nextJs</li>
+			<li>nodeJs</li>
+			<li>ReactJs</li>
+			<li>TypeScript</li>
+			<li>HTML/CSS/JS</li>
+		</ul>
+	</div>
+</div>
 </body>
+
+<script type="text/javascript" src="https://unpkg.com/onscreen/dist/on-screen.umd.min.js"></script>
+<script>
+	const frontentDeveloper = document.querySelector('.preview__box>p');
+	const aboutTitle = document.querySelector('.about h2');
+	console.log(frontentDeveloper)
+	document.querySelector('.preview__box').addEventListener('animationend', ()=>{
+		console.log(frontentDeveloper)
+		frontentDeveloper.classList.add('animate')
+	})
+	
+	const os = new OnScreen();
+	
+	const selectors = ['.about']
+	
+	selectors.forEach((selector, i) => {
+		const node = document.querySelector(`${selector} h2`)
+		const movingOnScroll = () => {
+			node.style[i % 2 ? 'right' : 'left'] = `${window.scrollY}px`;
+		}
+		const removeMoveTitle = () => {
+			document.removeEventListener('scroll', movingOnScroll)
+		}
+		const AddMoveTitle =()=>{
+			document.addEventListener('scroll', movingOnScroll)
+		}
+		os.on('enter', selector, AddMoveTitle)
+		os.on('leave', selector, removeMoveTitle)
+	})
+	
+</script>
+
 </html>

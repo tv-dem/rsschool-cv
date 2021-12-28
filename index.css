@@ -1,3 +1,145 @@
-body{
-	background-color: lightyellow;
+@import url('https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;900&family=WindSong:wght@400;500&display=swap');
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #ecfdf6c2;
+    overflow-x: hidden;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+}
+
+.page-container{
+    max-width: 1400px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+}
+
+.preview {
+    user-select: none;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview__box p {
+    font-size: 20px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity .8s cubic-bezier(0.96, -0.01, 0.43, 0.9);
+}
+
+.preview__box p.animate {
+    opacity: 1;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 102px;
+    font-family: 'WindSong', serif;
+	animation: 2s cubic-bezier(0.96,-0.01, 0.04, 1.25) mymove;
+}
+
+h2{
+    color: rgba(146, 146, 146, 0.13);
+    text-transform: uppercase;
+    font-size: 20rem;
+    font-weight: 100;
+    letter-spacing: 1.5rem;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.about{
+    padding-top: 10vh;
+    position: relative;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.about h2{
+    transition: left ease-out 1s;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+}
+
+.about__box{
+    background-color: #ecfdf6c2;
+    display: flex;
+    min-height: 400px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.about__description{
+    max-width: 800px;
+    flex-shrink: 1;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.about__description p{
+    font-size: 2.6rem;
+}
+
+
+.about__box img{
+    align-self: end;
+    height: 200px;
+    width: 200px;
+    flex-shrink: 0;
+    border-radius: 100%;
+}
+
+.skills{
+    padding-right: 400px;
+    position: relative;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.skills h2{
+    transition: right ease-out 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skills__box ul{
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.skills__box li{
+    display: block;
+    list-style: none;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+
+@keyframes mymove {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
 }
