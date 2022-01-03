@@ -10,74 +10,183 @@
 </head>
 <body>
 
-<div class="preview">
+<header class="preview">
 	<div class="preview__box">
 		<h1>Demchuk Tatyana</h1>
 		<p>frontent developer</p>
-	</div>
-</div>
-<div class="about page-container">
-	<h2>about me</h2>
-	<div class="about__box">
-		<div class="about__description">
-			<p>Hi! I`m motivated frontend developer, having half of year experience of working in this area</p>
-		</div>
-	<img src="tmp/cv.jpg" alt="">
-	</div>
-</div>
-<div class="skills page-container">
-	<h2>skills</h2>
-	<div class="skills__box">
-		<ul>
-			<li>Figma</li>
-			<li>nextJs</li>
-			<li>nodeJs</li>
-			<li>ReactJs</li>
-			<li>TypeScript</li>
-			<li>HTML/CSS/JS</li>
-		</ul>
-	</div>
-</div>
-
-<div class="projects page-container">
-	<h2>projects</h2>
-	<div class="projects__content">
-		<div class="projects__description">
-			<h3>Singolo - Apr 2020</h3>
+		<nav>
 			<ul>
-				<p>Technologies:</p>
-				<li data-num="0">HTML</li>
-				<li data-num="1">CSS</li>
-				<li data-num="2">JS</li>
-				<li data-num="3"></li>
+				<li><a href="#about">about</a></li>
+				<li><a href="#projects">projects</a></li>
+				<li><a href="#skills">skills</a></li>
+				<li><a href="#education">education</a></li>
+				<li><a href="#expmples">code expmples</a></li>
+				<li><a href="#contacts">contacts</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<main>
+	<div id="about" class="about page-container">
+		<h2>about me</h2>
+		<div class="about__box">
+			<div class="about__description">
+				<p>Hi! I`m motivated frontend developer, making world and user experience better</p>
+			</div>
+			<img src="tmp/cv.jpg" alt="">
+		</div>
+	</div>
+	
+	<div id="projects" class="projects page-container">
+		<h2>projects</h2>
+		<div class="projects__content">
+			<div class="projects__description">
+				<h3>Singolo - Apr 2020</h3>
+				<ul>
+					<p>Technologies:</p>
+					<li data-num="0">HTML</li>
+					<li data-num="1">CSS</li>
+					<li data-num="2">JS</li>
+					<li data-num="3"></li>
+				</ul>
+			</div>
+			<div class="projects__examples">
+				<a class="img without-line" href="https://tv-dem.github.io/singolo/">
+					<img src="./tmp/progects/singolo-1.png" alt="img">
+				</a>
+				<a class="img without-line " href="https://tv-dem.github.io/singolo/">
+					<img id="project-change0" data-project="0" src="./tmp/progects/singolo-2.png" alt="img">
+				</a>
+				<a class="img without-line " href="https://tv-dem.github.io/singolo/">
+					<img src="./tmp/progects/singolo-3.png" alt="img">
+				</a>
+				<a class="img without-line " href="https://tv-dem-songbird.netlify.app/">
+					<img id="project-change1" data-project="1" src="./tmp/progects/song-bird-1.png" alt="img">
+				</a>
+				<a class="img without-line " href="https://tv-dem-songbird.netlify.app/">
+					<img src="./tmp/progects/song-bird-2.png" alt="img">
+				</a>
+				<a class="img without-line " href="https://nifty-lamarr-2c777f.netlify.app/">
+					<img id="project-change2" data-project="2" src="./tmp/progects/snake-1.png" alt="img">
+				</a>
+				<a class="img without-line " href="https://nifty-lamarr-2c777f.netlify.app/">
+					<img src="./tmp/progects/snake-2.png" alt="img">
+				</a>
+				<a class="img without-line " href="https://nifty-lamarr-2c777f.netlify.app/">
+					<img src="./tmp/progects/snake-3.png" alt="img">
+				</a>
+			</div>
+		</div>
+	
+	</div>
+	<div id="skills" class="skills page-container with-line">
+		<h2>skills</h2>
+		<div class="skills__box">
+			<ul>
+				<li>Figma</li>
+				<li>nextJs</li>
+				<li>nodeJs</li>
+				<li>ReactJs</li>
+				<li>TypeScript</li>
+				<li>HTML/CSS/JS</li>
 			</ul>
 		</div>
-		<div class="projects__examples">
-			<img src="./tmp/progects/singolo-1.png" alt="">
-			<img src="./tmp/progects/singolo-2.png" alt="">
-			<img id="project-change0" data-project="0" src="./tmp/progects/singolo-3.png" alt="">
-			<img id="project-change1" data-project="1" src="./tmp/progects/song-bird-1.png" alt="">
-			<img src="./tmp/progects/song-bird-2.png" alt="">
-			<img id="project-change2" data-project="2" src="./tmp/progects/snake-1.png" alt="">
-			<img src="./tmp/progects/snake-2.png" alt="">
-			<img src="./tmp/progects/snake-3.png" alt="">
-		</div>
 	</div>
+	
+	<div id="education" class="education page-container with-line">
+		<h2>Education</h2>
+		<div class="education__description">
+			<ul>
+				<li>Brest State Technical University - 2017 - 2021</li>
+				<li>rsSchool(React) - 2020</li>
+				<li>rsSchool(frontend) - 2020 - 2021</li>
+				<li>rsSchool(React) - 2021</li>
+				<li>English courses by Streamline (English level B1)</li>
+			</ul>
+		</div>
+	
+	</div>
+	
+	<div id="expmples" class="code-example page-container with-line">
+		<h2>&lt;Code <br>examples/&gt;</h2>
+		<pre>
+const changeProjectData = ({dataset}) => {
+	const {project} = dataset;
+	const transitionEndHandler = ({target}) => {
+		const data = target.dataset.num ? projectData[project]
+			.technologies[target.dataset.num] : projectData[project].title;
+		target.textContent = data;
+		target.classList.remove('hide')
+		target.removeEventListener('transitionend', transitionEndHandler)
+	}
+	if(projectTitle.textContent === projectData[project].title){
+		return
+	}
+	projectTitle.addEventListener('transitionend', transitionEndHandler)
+	Array.from(projectTechnologiesLi).forEach(el => {
+		el.addEventListener('transitionend', transitionEndHandler}
+	))
+	projectTitle.classList.add('hide')
+	projectTechnologiesLi.forEach(el => el.classList.add('hide'))
+}
+	</pre>
+		<pre>
+const frontentDeveloper = document.querySelector('.preview__box>p');
+document.querySelector('.preview__box').addEventListener('animationend', ()=>{
+	console.log(frontentDeveloper)
+	frontentDeveloper.classList.add('animate')
+})
+	</pre>
+	
+	</div>
+	
+	<div id="contacts" class="contacts page-container with-line">
+		<h2>
+			<span class="contact-wrapper">c <a href="https://t.me//tv_dem" class="contact without-line">tg</a></span>
+			<span class="contact-wrapper">o <a
+				href="https://www.linkedin.com/in/%D1%82%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0-%D0%B4%D0%B5%D0%BC%D1%87%D1%83%D0%BA-a59262210"
+				class="contact without-line">ln</a></span>
+			<span>nta</span>
+			<span class="contact-wrapper">c <a href="https://github.com/tv-dem" class="contact without-line">gh</a></span>
+			<span>ts</span>
+		</h2>
+	</div>
+</main>
 
-</div>
+<footer class="page-container">
+	<ul>
+		<li>created by <a href="https://github.com/tv-dem">tv-dem</a>, 2022</li>
+		<li><a class="without-line" href="https://rs.school/js/"><img height="50px"
+																																	src="https://rs.school/images/rs_school_js.svg"
+																																	alt=""></a></li>
+		<li>inspired by <a href="https://sureshmurali.github.io/">this CV</a></li>
+	</ul>
+</footer>
 
 </body>
 
 <script type="text/javascript" src="https://unpkg.com/onscreen/dist/on-screen.umd.min.js"></script>
 <script>
+	
 	const frontentDeveloper = document.querySelector('.preview__box>p');
-	const aboutTitle = document.querySelector('.about h2');
 	console.log(frontentDeveloper)
-	document.querySelector('.preview__box').addEventListener('animationend', ()=>{
+	document.querySelector('.preview__box').addEventListener('animationend', () => {
 		console.log(frontentDeveloper)
 		frontentDeveloper.classList.add('animate')
 	})
-	
+	const smoothLinks = document.querySelectorAll('a[href^="#"]');
+	for (let smoothLink of smoothLinks) {
+		smoothLink.addEventListener('click', function (e) {
+			e.preventDefault();
+			const id = smoothLink.getAttribute('href');
+			
+			document.querySelector(id).scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		});
+	}
+	;
 	const os = new OnScreen();
 	
 	const selectors = ['.about']
@@ -85,12 +194,12 @@
 	selectors.forEach((selector, i) => {
 		const node = document.querySelector(`${selector} h2`)
 		const movingOnScroll = () => {
-			node.style[i % 2 ? 'right' : 'left'] = `${window.scrollY}px`;
+			node.style[i % 2 ? 'right' : 'left'] = `calc( ${window.scrollY}px - 50%)`;
 		}
 		const removeMoveTitle = () => {
 			document.removeEventListener('scroll', movingOnScroll)
 		}
-		const AddMoveTitle =()=>{
+		const AddMoveTitle = () => {
 			document.addEventListener('scroll', movingOnScroll)
 		}
 		os.on('enter', selector, AddMoveTitle)
@@ -153,7 +262,7 @@
 			target.classList.remove('hide')
 			target.removeEventListener('transitionend', transitionEndHandler)
 		}
-		if(projectTitle.textContent === projectData[project].title){
+		if (projectTitle.textContent === projectData[project].title) {
 			return
 		}
 		projectTitle.addEventListener('transitionend', transitionEndHandler)
@@ -165,7 +274,7 @@
 	os.on('enter', '#project-change0', changeProjectData);
 	os.on('enter', '#project-change1', changeProjectData);
 	os.on('enter', '#project-change2', changeProjectData);
-	
+
 </script>
 
 </html>
